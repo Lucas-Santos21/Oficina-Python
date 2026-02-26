@@ -1,0 +1,26 @@
+{% extends 'base.html.j2' %}
+
+    {% block conteudo %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <script>
+          {% for category, message in messages %}
+            console.log('Tipo do erro: ' + '{{ category }}');
+            alert("{{ category|upper }}: {{ message }}");
+          {% endfor %}
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <p>
+        <img src="{{ url_for('static', filename='leao.jfif') }}" class="imgTeste"> <br>
+        <h3>Está Logado</h3>
+        
+    </p>
+
+    <form action="{{ url_for('logout') }}" method="post">
+        <button>Sair do sistema</button>
+    </form>
+
+{% endblock %}

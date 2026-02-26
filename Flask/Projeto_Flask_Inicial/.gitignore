@@ -1,0 +1,17 @@
+# Ambientes Virtuais (VENV)
+venv/
+.venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configurações e Segredos
+.env
+instance/
+.pytest_cache/
+
+# Banco de Dados 
+*.db
