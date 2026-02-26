@@ -1,0 +1,23 @@
+{% extends 'base.html.j2' %}
+
+{% block conteudo %}
+    <h2>Login</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <script>
+          {% for category, message in messages %}
+            console.log('Tipo do erro: ' + '{{ category }}');
+            alert("{{ category|upper }}: {{ message }}");
+          {% endfor %}
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/login" method="post">
+      Usuario: <input type="text" name="username"><br/>
+      Senha: <input type="password" name="password"><br/> 
+      <button type="submit">Entrar</button>
+    </form>
+
+{% endblock %}

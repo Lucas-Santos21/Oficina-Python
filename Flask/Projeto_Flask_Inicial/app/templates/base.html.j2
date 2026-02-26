@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Página Inicial</a> |
+        <a href="{{ url_for('contato') }}">Contato</a> |
+        <a href="{{ url_for('login') }}">Login</a> |
+    </nav><br>
+
+    {% block conteudo %}
+    {% endblock %}
+
+    <h6>Projeto de Estudo Flask</h6>
+
+</body>
+</html>
